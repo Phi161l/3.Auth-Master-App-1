@@ -48,20 +48,18 @@ The project is built **for learning purposes** to understand how session-based a
 ## Folder Structure
 project-root/
 ├── data/
-│ └── users.json # User data storage
+│   └── users.json             # User data storage
 ├── public/
-│ ├── index.html # Main page
-│ ├── login.html # Login page
-│ ├── signup.html # Signup page
-│ ├── secret-1.html # Protected secret page
-│ ├── secret-2.html # Protected secret page
-│ └── admin.html # Admin-only page
-├── server.js # Express server with session auth
+│   ├── index.html             # Main page
+│   ├── login.html             # Login page
+│   ├── signup.html            # Signup page
+│   ├── secret-1.html          # Protected secret page
+│   ├── secret-2.html          # Protected secret page
+│   └── admin.html             # Admin-only page
+├── server.js                  # Express server with session auth
 ├── package.json
 └── README.md
 
-yaml
-Copy
-Edit
-
 ---
+
+
