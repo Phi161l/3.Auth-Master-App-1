@@ -46,6 +46,7 @@ The project is built **for learning purposes** to understand how session-based a
 ---
 
 ## Folder Structure
+```
 project-root/
 ├── data/
 │   └── users.json             # User data storage
@@ -59,7 +60,7 @@ project-root/
 ├── server.js                  # Express server with session auth
 ├── package.json
 └── README.md
+```
 
 ---
-
 
