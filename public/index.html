@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f9ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      margin: 15px 0;
+      font-size: 18px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome, <span id="username">User</span> !</h2>
+
+    <p>Choose a page to visit:</p>
+    <a href="/secret-1.html">🔐 Secret Page 1</a>
+    <a href="/secret-2.html">🔐 Secret Page 2</a>
+    <a href="/logout">🚪 Logout</a>
+  </div>
+
+
+
+
+  <script>
+    async function loadUser() {
+      const res = await fetch("/me");
+      const data = await res.json();
+  
+      if (data.loggedIn) {
+        document.getElementById("username").innerText = data.existingUser.username;
+        document.getElementById("username").style.color = "violet";
+      } else {
+        window.location.href = "/login.html";
+      }
+    }
+  
+    loadUser();
+  </script>
+  
+</body>
+</html>

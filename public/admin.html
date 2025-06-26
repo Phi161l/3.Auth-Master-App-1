@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff3cd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      margin-top: 20px;
+      color: #dc3545;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-btn {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ffc107;
+      color: black;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #e0a800;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛠️ Admin Panel</h1>
+    <h2>Welcome, <span id="username"></span> You are an admin! You can manage the system here.!</h2>     
+
+    <a class="back-btn" href="/secret-1.html">⬅️ Back to secret-1 Page</a>
+    <a href="/logout">Logout</a>
+  </div>
+</body>
+
+<script>
+  async function loadUser() {
+    const res = await fetch("/me");
+    const data = await res.json();
+
+    if (data.loggedIn) {
+      document.getElementById("username").innerText = data.existingUser.username;
+      document.getElementById("username").style.color = "violet";
+    } else {
+      window.location.href = "/login.html";
+    }
+  }
+
+  loadUser();
+</script>
+
+
+</html>
